@@ -1,0 +1,64 @@
+{
+  "type": "datasource",
+  "metadata": {},
+  "schema": {
+    "docs": "https://stripe.com/docs/api/events?lang=node",
+    "friendlyName": "Stripe events + mandates",
+    "type": "API",
+    "description": "Manage Stripe events and mandates",
+    "datasource": {
+      "apiKey": {
+        "type": "password",
+        "required": true
+      }
+    },
+    "query": {
+      "read": {
+        "type": "fields",
+        "fields": {
+          "id": {
+            "type": "string",
+            "required": false
+          },
+          "type": {
+            "type": "string",
+            "required": false
+          },
+          "delivery_success": {
+            "type": "string",
+            "required": false
+          },
+          "created": {
+            "type": "object",
+            "required": false
+          },
+          "ending_before": {
+            "type": "string",
+            "required": false
+          },
+          "limit": {
+            "type": "number",
+            "required": false
+          },
+          "starting_after": {
+            "type": "string",
+            "required": false
+          }
+        }
+      }
+    },
+    "extra": {
+      "type": {
+        "displayName": "Type",
+        "type": "list",
+        "required": false,
+        "data": {
+          "read": [
+            "Events",
+            "Mandates"
+          ]
+        }
+      }
+    }
+  }
+}
